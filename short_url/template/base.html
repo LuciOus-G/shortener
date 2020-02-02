@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% block head %}
+  {% endblock head %}
+  <title>NewsBook</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="padding-top:5%;">
+  <header class="fixed-top" style="background-color:#F4F4F4; border-bottom:2px solid #DED9D8;">
+    <div class="container">
+      <h1 class="float-left">NewsBook</h1>
+      <ul class="nav justify-content-center" style="padding:1% 0 1% 0; width:70%;">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">All News</a>
+        </li>
+      </ul>
+      <form class="" action="{% url 'search' %}" method="get">
+        <div class="search" style="float:right;margin-top:-3.5%;margin-right:5%;border-radius:20px 20px 20px 20px; background-color:white; padding-left:5px;border:1px solid #495057;">
+          <button type="submit" id="button1" name="" style="visibility:hidden;"></button><i class="fas fa-search"></i>
+          <input type="text" name="qsearch" value="" placeholder="Search..." style="background-color:white;color:#495057;border:none;border-radius: 0 20px 20px 0;">
+
+        </div>
+      </form>
+    </div>
+  </header>
+  {% block content %}
+  {% endblock content %}
+
+  {% block js %}
+  {% endblock js %}
+  <script type="text/javascript">
+  $( "#button1" ).keyup(function( event ) {
+
+    }).keydown(function( event ) {
+        if ( event.which == 13 ) {
+          event.preventDefault();
+          document.getElementById('button1').click()
+        }
+    });
+  </script>
+</body>
+</html>
