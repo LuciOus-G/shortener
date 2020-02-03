@@ -5,11 +5,16 @@ import random
 import string
 
 class content(models.Model):
+    choice_category = (
+            ('game', 'game'),
+            ('crypto', 'crypto')
+    )
     title = models.CharField(max_length=255)
     body = models.TextField(default='')
     date = models.DateTimeField(auto_now_add=True, null=True)
     slug = models.SlugField(default='', blank=True, editable=False)
     image = models.ImageField(default='', upload_to='Thumb')
+    category = models.CharField(default='', max_length=255, choices=choice_category)
 
     def __str__(self):
         return self.slug

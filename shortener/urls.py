@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^log/admin/', admin.site.urls),
     # url(r'^(?P<Token>[\w-]+)/$', views.home),
     url(r'^home/$', views.home, name='home'),
+    url(r'^game/$', views.game, name='game'),
+    url(r'^crypto/$', views.crypto, name='crypto'),
     url(r'^article/(?P<slug>[\w-]+)/$', views.article, name='article'),
     url(r'^article/(?P<slug>[\w-]+)/(?P<Token>[\w-]+)/$', views.article, name='article2'),
     url(r'^search/$', views.search, name='search')

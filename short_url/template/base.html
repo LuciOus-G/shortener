@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<body style="padding-top:5%;">
+<body style="padding-top:5%;padding-bottom:5%;float:left;width: 100%;">
   <header class="fixed-top" style="background-color:#F4F4F4; border-bottom:2px solid #DED9D8;">
     <div class="container">
       <h1 class="float-left">NewsBook</h1>
@@ -22,7 +22,10 @@
           <a class="nav-link active" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">All News</a>
+          <a class="nav-link" href="{% url 'crypto' %}">Crypto Currency</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'game' %}">Game</a>
         </li>
       </ul>
       <form class="" action="{% url 'search' %}" method="get">
@@ -36,6 +39,10 @@
   </header>
   {% block content %}
   {% endblock content %}
+
+  <footer style="position:fixed;bottom:0;left: 50%;background-color: #F4F4F4;width: 100%;transform: translate(-50%, 0);text-align: center;border-top: 2px solid #DED9D8;height: 4vw;padding-top: 1.1%;">
+    &copy NewsBook | Design By Gamebook
+  </footer>
 
   {% block js %}
   {% endblock js %}

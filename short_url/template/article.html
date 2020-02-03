@@ -43,14 +43,16 @@
       </div></center>
     </div>
     </div>
-    <div class="float-right" style="width:18%; margin-right:1%;">
+    <div class="float-right" style="width:18%; margin-right:1%;position:fixed;top:17%;right:0;">
       <div class="rounded-pill" style="background-color:#f5f8fa;text-align:center; font-size:20px;" >
         <p>Related News</p>
       </div>
       <div class="clear"></div>
       <div class="" style="background-color:#f5f8fa;text-align:center; font-size:20px; border-radius:25px;">
         {% for content in ctn %}
-          <a href="{% url 'article' slug=content.slug %}"><p class="related">{{ content.title }}</p></a>
+          {% if not forloop.counter >= 10 %}
+            <a href="{% url 'article' slug=content.slug %}"><p class="related">{{ content.title }}</p></a>
+          {% endif %}
         {% endfor %}
 
       </div>

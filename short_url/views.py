@@ -49,3 +49,25 @@ def search(request):
     }
 
     return render (request, 'search.html', context)
+
+def game(request):
+    gameNews = content.objects.filter(category__icontains='game').order_by('-date')
+    ctn = content.objects.all().order_by('-date')
+
+    context = {
+        'game':gameNews,
+        'ctn':ctn
+    }
+
+    return render(request, 'game.html', context)
+
+def crypto(request):
+    cryptoNews = content.objects.filter(category__icontains='crypto').order_by('-date')
+    ctn = content.objects.all().order_by('-date')
+
+    context = {
+        'crypto':cryptoNews,
+        'ctn':ctn
+    }
+
+    return render(request, 'crypto.html', context)
