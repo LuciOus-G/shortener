@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y7rjt*^ncdk==j)57h*a=fjay#-7h$8o7b1kyx+&(08*#jwe0v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['short-v2.herokuapp.com', 'shortener-v2.herokuapp.com', 'news.gamebook-powered.xyz', '127.0.0.1']
 
 
 # Application definition

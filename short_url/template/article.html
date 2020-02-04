@@ -11,51 +11,28 @@
 
 {% block content %}
 <div class="">
-  <div class="float-left" style="width:18%;margin-left:1%;margin-right:1%;">
-    <div class="">
-      ads
-    </div>
-    <div class="">
-      ads
-    </div>
-    <div class="">
-      ads
-    </div>
-  </div>
   <div class="float-left border" style="width:60%;padding:10px;">
-    <div style="margin-bottom:10px; float:left;width:50%;">   ads   </div>
-    <div style="margin-bottom:10px; float:left;width:50%;">   ads   </div>
+    <!-- ads -->
+    <div style="margin-bottom:10px; float:left;width:50%;"></div>
+    <div style="margin-bottom:10px; float:left;width:50%;"></div>
+    <!-- end ads -->
     <div>
       <center><h1 style="margin-top:10px;">{{ article.title }}</h1></center>
-      <center><img src="{{ article.image.url }}" alt="{{ article.title }}" style="width:60%;margin-bottom:15px;"></center>
-      {% if not urls.longUrl == 'gamebook-powered.xyz' %}
+      <center><img src="{{ article.image }}" alt="{{ article.title }}" style="width:60%;margin-bottom:15px;"></center>
+      {% if not urls.longUrl == 'default' %}
         <center><a href="#next" id="jq" class="btn btn-danger disabled" tabindex="-1" role="button" aria-disabled="true"><span id="change">if counting doesn't exist please refresh</span></a></center>
       {% endif %}
-      <p>{{ article.body }}</p>
-      <center><div class="" style="margin-bottom:20px;20px">
-        ads
-      </div></center>
-      {% if not urls.longUrl == 'gamebook-powered.xyz' %}
+      <p style="text-align:justify; white-space:pre-wrap;">{{ article.body | safe }}</p>
+      <!-- ads -->
+      <center><div class="" style="margin-bottom:20px;20px"></div></center>
+      <!--  -->
+      {% if not urls.longUrl == 'default' %}
         <center><a href="{{ urls.longUrl }}"><input style="display:none;" type="button" id="next" class="btn btn-danger" name="" value="Next for download"></a></center>
       {% endif %}
-      <center><div class="" style="margin-top:20px;">
-        ads
-      </div></center>
+      <!-- ads -->
+      <center><div class="" style="margin-top:20px;"></div></center>
+      <!--  -->
     </div>
-    </div>
-    <div class="float-right" style="width:18%; margin-right:1%;position:fixed;top:17%;right:0;">
-      <div class="rounded-pill" style="background-color:#f5f8fa;text-align:center; font-size:20px;" >
-        <p>Related News</p>
-      </div>
-      <div class="clear"></div>
-      <div class="" style="background-color:#f5f8fa;text-align:center; font-size:20px; border-radius:25px;">
-        {% for content in ctn %}
-          {% if not forloop.counter >= 10 %}
-            <a href="{% url 'article' slug=content.slug %}"><p class="related">{{ content.title }}</p></a>
-          {% endif %}
-        {% endfor %}
-
-      </div>
     </div>
     </div>
 

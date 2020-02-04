@@ -4,7 +4,7 @@ from .models import short, content
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-default = 'nbSFHQRit4RNwKKyeE3IxIs15v33I5CDkKJ9Evw0dBdAilqKaFLeEQr57RKB0KHuyhBeaGM2m6spnvOsVX2xxZnimvFdXGeeK6hkOneOS0QPjrhq74GYaE3QF1jwtDh2ZwMurNL8hCk6GyoUWCPgDK'
+default = 'dvphXjH4v2ZhdOrDS0IYMsaPweLL4bIUzVFUyDeK5VffEqH60Djp9KDijtxQmYx6Jn2CWGpTcYtm3zFi3oilT0Cuk3nexSQpPhKhdq0syDiQNUaYllp9H2YtzotzUkqVjuUXGpKtj0LZsMyPDuHoN9'
 
 # Create your views here.
 def home(request, Token=None, *args, **kwargs):

@@ -1,5 +1,4 @@
 from django.db import models
-from .utils import newCode
 from django.utils.text import slugify
 import random
 import string
@@ -10,10 +9,10 @@ class content(models.Model):
             ('crypto', 'crypto')
     )
     title = models.CharField(max_length=255)
-    body = models.TextField(default='')
+    body =  models.TextField(default='')
     date = models.DateTimeField(auto_now_add=True, null=True)
     slug = models.SlugField(default='', blank=True, editable=False)
-    image = models.ImageField(default='', upload_to='Thumb')
+    image = models.CharField(default='', max_length=1000)
     category = models.CharField(default='', max_length=255, choices=choice_category)
 
     def __str__(self):
@@ -51,15 +50,5 @@ def randomGenerate(size=150, chars=string.ascii_letters + string.digits):
     qs = short.objects.filter(Token=generate).exists()
     if qs:
         randomGenerate(size=size + 1)
-    randomGenerate.urlFinal = 'https://next.gamebook-powered.xyz/article/' + str(slug[randoms]) + '/' + generate
+    randomGenerate.urlFinal = 'https://news.gamebook-powered.xyz/article/' + str(slug[randoms]) + '/' + generate
     return generate
-
-def linkGenerate(size=150, chars=string.ascii_letters + string.digits):
-    randoms = random.randrange(content.objects.all().count())
-    slug = list(content.objects.all())
-    generate = ''.join(random.choice(chars) for _ in range(size))
-    qs = short.objects.filter(Token=generate).exists()
-    if qs:
-        randomGenerate(size=size + 1)
-    urlFinal = 'https://next.gamebook-powered.xyz/article/' + str(slug[randoms]) + '/' + generate
-    return urlFinal

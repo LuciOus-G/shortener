@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^log/admin/', admin.site.urls),
     # url(r'^(?P<Token>[\w-]+)/$', views.home),
-    url(r'^home/$', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
     url(r'^game/$', views.game, name='game'),
     url(r'^crypto/$', views.crypto, name='crypto'),
     url(r'^article/(?P<slug>[\w-]+)/$', views.article, name='article'),
